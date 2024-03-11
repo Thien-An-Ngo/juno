@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "bun test",
+    "build": "bun build src/index.ts",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "dev": "bun run --watch src/index.ts",
+    "lint": "eslint --ext .js,.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "5.10.2",
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "bun-types": "latest",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "prisma": "^5.10.2"
+  },
+  "module": "src/index.js"
+}
