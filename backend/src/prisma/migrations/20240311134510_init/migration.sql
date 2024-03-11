@@ -2,10 +2,20 @@
 CREATE TYPE "Role" AS ENUM ('USER', 'PREMIUM', 'ADMIN', 'OWNER');
 
 -- CreateTable
+CREATE TABLE "UnverifiedUser" (
+    "id" UUID NOT NULL,
+    "email" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "UnverifiedUser_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "User" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL,
     "email" TEXT NOT NULL,
     "username" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
     "role" "Role" NOT NULL DEFAULT 'USER',
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
@@ -13,16 +23,16 @@ CREATE TABLE "User" (
 
 -- CreateTable
 CREATE TABLE "CryptoWatchlist" (
-    "id" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
+    "id" UUID NOT NULL,
+    "userId" UUID NOT NULL,
 
     CONSTRAINT "CryptoWatchlist_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "CryptoWatchItem" (
-    "id" TEXT NOT NULL,
-    "CryptoWatchlistId" TEXT NOT NULL,
+    "id" UUID NOT NULL,
+    "CryptoWatchlistId" UUID NOT NULL,
     "symbol" VARCHAR(6) NOT NULL,
     "baseCurrency" TEXT NOT NULL,
     "quoteCurrency" TEXT NOT NULL,
@@ -38,6 +48,9 @@ CREATE TABLE "CryptoWatchItem" (
 
     CONSTRAINT "CryptoWatchItem_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "UnverifiedUser_email_key" ON "UnverifiedUser"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
