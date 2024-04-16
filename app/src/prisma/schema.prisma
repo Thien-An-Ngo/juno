@@ -14,9 +14,10 @@ datasource db {
 }
 
 model UnverifiedUser {
-  id        String   @id @default(uuid()) @db.Uuid
-  email     String   @unique
-  createdAt DateTime @default(now())
+  id          String   @id @default(uuid()) @db.Uuid
+  email       String   @unique
+  token       String
+  lastUpdated DateTime @default(now())
 }
 
 model User {

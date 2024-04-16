@@ -1,0 +1,2 @@
+# Register new Email
+GET {{url}}/api/user/signup/email/thingolson@gmail.com

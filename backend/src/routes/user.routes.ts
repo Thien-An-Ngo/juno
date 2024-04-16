@@ -1,5 +1,15 @@
-import { Elysia } from 'elysia'
-import { signUp } from '../controllers/user.controller'
+import dotenv from 'dotenv'
 
-export const userRoutes = new Elysia({ prefix: '/user' })
-	.post('/sign-up', signUp)
+import express from 'express'
+import path from 'path'
+
+import { signUpEmail, verifyEmail } from '../controllers/account.controller.ts'
+
+dotenv.config({ path: path.join(__dirname, '../', '.env') })
+
+const router = express.Router()
+
+router.get('/signup/email/:email', signUpEmail)
+router.post('/signup/email/:email/verify/:token', verifyEmail)
+
+export default router

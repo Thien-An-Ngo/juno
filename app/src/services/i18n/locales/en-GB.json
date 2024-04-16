@@ -1,0 +1,14 @@
+{
+  "user.signup.email.error.invalid": "Invalid email address.",
+  "user.signup.email.error.unavailable": "Email already in use.",
+  "user.signup.email.success.new": "Successfully registered new email address.",
+  "user.signup.email.error.internal": "Internal server error.",
+  "user.signup.email.error.tooRecent": "Please wait a few minutes before trying again.",
+  "user.signup.email.success.updated": "Successfully registered renewed request.",
+  "email.signup.subject": "Email Verification",
+  "email.signup.title": "Welcome to JunoGains!",
+  "email.signup.body": "Thank you for registering on our website. To complete the registration process, please verify your email address by clicking the button below.",
+  "email.signup.button": "Verify Email Address",
+  "email.signup.copy.text": "If the button above does not work, you can copy the token below and paste it to our verification page.",
+  "email.signup.copy.button": "Copy Token"
+}

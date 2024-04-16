@@ -1,0 +1,4 @@
+{
+	"user.signup.email.error.invalid": "Die eingegebene E-Mail-Adresse ist ungültig.",
+	"user.signup.email.error.unavailable": "Die eingegebene E-Mail-Adresse ist bereits vergeben."
+}
